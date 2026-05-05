@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>abeef6dd-463f-45be-b988-b04baf461a5e</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>TestManager.py</StartupFile>
+    <StartupFile>test_manager.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -23,8 +23,9 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Globals - Copy.py" />
-    <Compile Include="TestManager.py" />
+    <Compile Include="args.py" />
+    <Compile Include="Scripts\Windows\script_cmd_test.py" />
+    <Compile Include="test_manager.py" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Scripts\" />
