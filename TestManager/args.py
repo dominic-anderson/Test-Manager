@@ -36,17 +36,18 @@ _HELP_MESSAGE = "List of valid arguments:\n" + \
 HELP = True if (_check_bool_arg(_HELP, _HELP_LONG)) else False
 
 def _arg_check(arg_list):
+    if any(arg in [_HELP, _HELP_LONG] for arg in sys.argv[1:]):
+        print(_HELP_MESSAGE)
+        if len(sys.argv) != 2:
+            print("Other arguments ignored")
+        return
+
     for arg in sys.argv[1:]:
         if arg.startswith("-") and arg not in arg_list:
             print(f"Warning: Unrecognized argument '{arg}'")
             continue
 
         if arg in arg_list:
-            if arg == _HELP or arg == _HELP_LONG:
-                print(_HELP_MESSAGE)
-                if len(sys.argv) != 2:
-                    print("Other arguments ignored")
-                break
             if arg == _VERBOSE_MODE or arg == _VERBOSE_MODE_LONG:
                 print(_VERBOSE_MODE_ENABLED)
                 continue
