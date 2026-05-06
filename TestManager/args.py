@@ -12,11 +12,11 @@ def _check_bool_arg(*args) -> bool:
     return any(arg.casefold() in [a.casefold() for a in sys.argv[1:]] for arg in args)
 
 # Verbose mode: If enabled, the program will print more detailed information about what it is doing
-_VERBOSE_MODE = "-v"
-_VERBOSE_MODE_LONG = "--verbose"
-_VERBOSE_MODE_DESC = "Display extended information during execution"
-_VERBOSE_MODE_ENABLED = "Verbose mode enabled"
-VERBOSE = True if (_check_bool_arg(_VERBOSE_MODE, _VERBOSE_MODE_LONG)) else False
+_VERBOSE = "-v"
+_VERBOSE_LONG = "--verbose"
+_VERBOSE_DESC = "Display extended information during execution"
+_VERBOSE_ENABLED_MESSAGE = "Verbose mode enabled"
+VERBOSE_MODE = True if (_check_bool_arg(_VERBOSE, _VERBOSE_LONG)) else False
 
 """
 Declare other arguments here
@@ -32,7 +32,7 @@ _HELP_LONG = "--help"
 _HELP_DESC = "Show all valid arguments, ignores all other arguments"
 _HELP_MESSAGE = "List of valid arguments:\n" + \
                 f"{_HELP}, {_HELP_LONG}:    {_HELP_DESC}\n" + \
-                f"{_VERBOSE_MODE}, {_VERBOSE_MODE_LONG}: {_VERBOSE_MODE_DESC}"
+                f"{_VERBOSE}, {_VERBOSE_LONG}: {_VERBOSE_DESC}"
 HELP = True if (_check_bool_arg(_HELP, _HELP_LONG)) else False
 
 def _arg_check(arg_list):
@@ -48,13 +48,13 @@ def _arg_check(arg_list):
             continue
 
         if arg in arg_list:
-            if arg == _VERBOSE_MODE or arg == _VERBOSE_MODE_LONG:
-                print(_VERBOSE_MODE_ENABLED)
+            if arg == _VERBOSE or arg == _VERBOSE_LONG:
+                print(_VERBOSE_ENABLED_MESSAGE)
                 continue
 
 _VALID_ARGS = [
     _HELP, _HELP_LONG,
-    _VERBOSE_MODE, _VERBOSE_MODE_LONG
+    _VERBOSE, _VERBOSE_LONG
     ]
 
 _arg_check(_VALID_ARGS)
