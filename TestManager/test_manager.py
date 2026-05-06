@@ -7,8 +7,8 @@ import sys
 if __name__ == "__main__":
 
     # Originally for testing
-    # if args.HELP:
-    #     sys.exit()
+    if args._parsed.show_help:
+        sys.exit()
     if pf.system() == "Windows": 
         print("Main function")
         runpy.run_path("scripts/windows/script_cmd_test.py", run_name="__main__")
