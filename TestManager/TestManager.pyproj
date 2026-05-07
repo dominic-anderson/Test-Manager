@@ -50,7 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include=".env" />
-    <Content Include="Scripts\JavaScript\workflow_main.js" />
+    <Content Include="Scripts\JavaScript\run_workflow.js" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
