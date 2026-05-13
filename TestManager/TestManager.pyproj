@@ -29,6 +29,7 @@
   <ItemGroup>
     <Compile Include="args.py" />
     <Compile Include="Scripts\Windows\script_cmd_test.py" />
+    <Compile Include="Scripts\Windows\script_hardware_test.py" />
     <Compile Include="test_manager.py" />
   </ItemGroup>
   <ItemGroup>

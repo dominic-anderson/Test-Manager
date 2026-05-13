@@ -12,5 +12,5 @@ if __name__ == "__main__":
     if args._parsed.show_help:
         args.print_help()
         sys.exit()
-    if args.WORKFLOW != "": 
+    elif args.WORKFLOW != "": 
         sp.run(['node', 'scripts/javascript/run_workflow.js', args.VERBOSE, args.WORKFLOW])
